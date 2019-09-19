@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.vip.loans.mapper.AddbankcardMapper">
+  <resultMap id="BaseResultMap" type="com.vip.loans.domain.entity.Addbankcard">
+    <!--@mbg.generated-->
+    <id column="card_id" jdbcType="INTEGER" property="cardId" />
+    <result column="user_name" jdbcType="VARCHAR" property="userName" />
+    <result column="bank_name" jdbcType="VARCHAR" property="bankName" />
+    <result column="bank_area" jdbcType="VARCHAR" property="bankArea" />
+    <result column="sub_branch" jdbcType="VARCHAR" property="subBranch" />
+    <result column="uid" jdbcType="INTEGER" property="uid" />
+    <result column="create_date" jdbcType="TIMESTAMP" property="createDate" />
+  </resultMap>
+
+</mapper>

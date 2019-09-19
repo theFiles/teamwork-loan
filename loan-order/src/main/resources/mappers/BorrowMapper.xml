@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.vip.loans.mapper.BorrowMapper">
+  <resultMap id="BaseResultMap" type="com.vip.loans.domain.entity.Borrow">
+    <!--@mbg.generated-->
+    <id column="bro_id" jdbcType="INTEGER" property="broId" />
+    <result column="bro_money" jdbcType="INTEGER" property="broMoney" />
+    <result column="bro_use" jdbcType="VARCHAR" property="broUse" />
+    <result column="bro_periods" jdbcType="VARCHAR" property="broPeriods" />
+    <result column="down_payment" jdbcType="INTEGER" property="downPayment" />
+    <result column="bro_account" jdbcType="VARCHAR" property="broAccount" />
+    <result column="create_date" jdbcType="TIMESTAMP" property="createDate" />
+    <result column="uid" jdbcType="VARCHAR" property="uid" />
+    <result column="is_delete" jdbcType="TINYINT" property="isDelete" />
+  </resultMap>
+  <insert id="addByUid">
+    insert into
+    borrow(bro_money, bro_use, bro_periods, down_payment, bro_account,  uid, )
+    values(#{broMoney},#{broUse},#{broPeriods},#{downPayment},#{broAccount},#{uid})
+
+  </insert>
+
+</mapper>
