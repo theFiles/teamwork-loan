@@ -1,4 +1,4 @@
-package com.vip.loans;
+package com.team.loanorder;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -7,7 +7,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class LoansApplicationTests {
+public class LoanOrderApplicationTests {
 
     @Test
     public void contextLoads() {
