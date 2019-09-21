@@ -1,0 +1,66 @@
+
+spring:
+  mail:
+    host: smtp.qq.com
+    username: 541725460@qq.com
+    password: zqcsnkydjvaubbba
+    properties:
+      mail:
+        smtp:
+          auth: true
+          timeout: 25000
+          ssl:
+            enable: true
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      username: root
+      password: hhy199578
+      url: jdbc:mysql://47.107.167.205:8888/loan?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+      initial-size: 5
+      max-active: 20
+      min-idle: 3
+      filter: stat,wall,slf4j
+      web-stat-filter:
+        enabled: true
+        log-slow-sql: true
+        url-pattern:  '/*'
+        exclusions: "*.js,*.png,/druid/*"
+      stat-view-servlet:
+        enabled: true
+        url-pattern: /druid/*
+        reset-enable: true
+        login-username: admin
+        login-password: admin
+        allow: 127.0.0.1
+        deny: ""
+  redis:
+    database: 0
+    host: 127.0.0.1
+    port: 6379
+    #password:
+    jedis:
+        pool:
+          max-active: 200
+          max-wait: -1ms
+          max-idle: 10
+          min-idle: 0
+    timeout: 1000ms
+
+
+mybatis:
+  type-aliases-package:  com.vip.demo.domain.entity
+  mapper-locations: classpath:mappers/**/*.xml
+server:
+  port: 8800
+
+alipay:
+  gateway: https://openapi.alipaydev.com/gateway.do
+  charset: UTF-8
+  sign-type: RSA
+  public-key: MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAoE4W7YZ653bgAtmzwYqcV9A4zSagtlmEiE4toGGidVg0e8KpJc+TqP2maCH/APol7vrCWI52VDVe+68MUAgXSlPQ0jH5D6Kk5O+71xTvo5ELqGxnVEdJV67fGVjmxmmOIr03XCFbvw/QXWQZyvt7hgLMuVMdZ18UYF2VSJtTZ3Lxnc6zGX2+3oVHAXG2/cwwyceb8KF12z17IADX/iC7wD8IKPBQfq+8klpcTfxo5kr3ESdBTEkYzSJZ86b8xBWXSwArKF4UCcrXfCeUNJb0+lkQCtNJKCBwdv7dhev8LyUn2qv72AEljaxkBI0jtGoTfYpr5o/k8yV/x93l0AHPAwIDAQAB
+  app-infor:
+    notify-url: https://www.baidu.com/
+    id: 2016101200667023
+    private-key: MIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCdqU/OKiJz3ktUojVTTDptsl46Md84xtMOpOSQp0NXa0YYWq4en9Dp9vYD1pFTKSah3wHW/991Vrg5Nyb9k2hc/3fyueGa2/vHGROrECWB9d5gP32tTw/sPVxYb5GYFbY58NPBWkxXfi43Xa6i3To//KDeADUagni5m/4rKMSnGeP/brVcNMHmgt9vTCVJ1pNPQpI0E+CAf2KLzxZqjUMbl3yd3aIlYb4YCNtKs8rNGXsjdaEEEeGvLyL9+7sECawB3GY0wqDV4v9tUFbDR/sitlqiRWsi1ekAzqiLwKTJL32Y6igue981Xtc6mGE++wwpARehx6Ea9oxGyS0RmEQLAgMBAAECggEBAIpLD3OZxeq43H76YagVP1MlmD2XrWPSEyPPQ6YW8Zzmve9y6zR1nvz64UTwmzzE5dwrDyQWAV6dmK6nUA4xlOOuOvqwTdJWj/1OY9AzM5NRpaPrTUQOC7t+/1ebVax/rv4X3sbFfB1q0wNBq4O0ZfnmkPzqVapRM7ArwsD827JuQVOF7P010JDubqyCSDGAOQazICpWLO54y8+hDJcFpk4/s7XDZ33QnUda0Ij7Qd6hlrFMjTOwcaU41wItOo7B9ZSpTSh0v7jQftK4p3qqxshDGQ54mudRFNc/BG0Y8dbsESW9zEdJNHMf3fcZWTos54cMBQCnsoiFJYA6iUrOG1ECgYEA5/2NcbpPPxGD/jBOqsvC2zC7gxzlxhlb/mTNcvx5NtYKJkBYtkbmqVbXuRyG1RXN0uM2g4d171lkmKcDW9LfceSZE0qokbvNl2FpVaFt8Ec8X7v6ITJyJ+XofQfU+QL4CHbk+jfl/NtBNPz/3F9ibIOq5N/cLJii7e4YwGziMn8CgYEArfp0ikGK0ScQkelZiHoIGAeHv/MbcDbbc7gUsD8D5P6RL2bUmjVs/HCkFyVnVFAG4lXW3LetwzrkLmSq2KQwt+X1X/atnxGaiKOQmfZQxxL5OLsE0sCbNKFKR9r3fqL7nUaBiohg6M7KKnqykbNv5TuQn/LJZCxvAYg9qoLQ0HUCgYEAv2NztHaC+EIIBcVusQNHLzOmDsXhXiv/tAEPaaSWj8HHP8VoKoCVvPCTKfk510OUuT2P9LTle9/g2Ps4DyIKC1kPXFYEea5ZL2FC2E1EeK0cRtK6yXZnrTjEM5opfoGPhNQplbBWAeQUiJWMtA7RETsS2p1AdF48VFRQgTeS6RsCgYAVlRZT+GGCJLh3gV0sAwdyA60hcMUcnJGIv3NBke+nvrTADp+dKbeFcWvJu0ggO3U/Kqrm4ppZt7qKzs4q5eNtTMetyeor64EiJjhQATBwIbhtAzZL9rzKQJ/4Xf+J5CoWjqKPTu/GsbB+qI3yaTIeW89LKFE3bhOvOvl7Z5MD6QKBgGeyCiR6ri1Ok1wkkIpA6ggyJp6mSHkOE4U/K8+EoKYzKnDM3J11T3I/TNJ23H5r6gQ1sn0tn1IzbLhAr4vFCRRObFXFDqMr0YIv2AuOr82HKRX/zXBg1+H4cjrzzCht6DGbQNZrLvQM9cXFqrdDUmhZGh1xQbMjMYxAuNEYvRRW
